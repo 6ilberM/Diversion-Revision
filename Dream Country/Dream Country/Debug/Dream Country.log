@@ -1,2 +1,3 @@
 ﻿  main.cpp
+d:\repo\diversion-revision\dream country\dream country\main.cpp(101): warning C4715: 'init': not all control paths return a value
   Dream Country.vcxproj -> D:\Repo\Diversion-Revision\Dream Country\Debug\Dream Country.exe
