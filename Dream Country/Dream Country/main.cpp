@@ -1,7 +1,11 @@
 #include <glew.h>
 #include <GLFW/glfw3.h>
-#include<iostream>
 
+//Physics Engine
+#include "Dependencies/Includes/Box2D/Box2D.h"
+
+//Other
+#include<iostream>
 #include <vld.h>
 
 using namespace std;
@@ -106,6 +110,7 @@ int OnBeginPlay()
 	//Default_Shader = shaderloader.loadShaders("Assets/Shaders/default.vs", "Assets/Shaders/default.fs");
 	//Light_Shader = shaderloader.loadShaders("Assets/Shaders/lit.vs", "Assets/Shaders/lit.fs");
 
+	// Construct a world object, which will hold and simulate the rigid bodies.
 	return 1;
 }
 

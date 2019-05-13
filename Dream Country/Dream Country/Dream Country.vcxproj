@@ -70,11 +70,11 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <IncludePath>$(ProjectDir)Dependencies\Includes;$(ProjectDir)Dependencies\Includes\GL;$(ProjectDir)Dependencies\Includes\GLFW;$(ProjectDir)Dependencies\Includes\glm;$(ProjectDir)Dependencies\Includes\soil;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)Dependencies\Includes;$(ProjectDir)Dependencies\Includes\GL;$(ProjectDir)Dependencies\Includes\GLFW;$(ProjectDir)Dependencies\Includes\glm;$(ProjectDir)Dependencies\Includes\soil;$(ProjectDir)\Dependencies\Includes\Box2D;$(IncludePath)</IncludePath>
     <LibraryPath>$(ProjectDir)Dependencies\Libraries\Debug;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>$(ProjectDir)Dependencies\Includes;$(ProjectDir)Dependencies\Includes\GL;$(ProjectDir)Dependencies\Includes\GLFW;$(ProjectDir)Dependencies\Includes\soil;$(ProjectDir)Dependencies\Includes\glm;$(IncludePath)</IncludePath>
+    <IncludePath>$(ProjectDir)Dependencies\Includes;$(ProjectDir)Dependencies\Includes\GL;$(ProjectDir)Dependencies\Includes\GLFW;$(ProjectDir)Dependencies\Includes\soil;$(ProjectDir)Dependencies\Includes\glm;$(ProjectDir)\Dependencies\Includes\Box2D;$(IncludePath)</IncludePath>
     <LibraryPath>$(ProjectDir)Dependencies\Libraries\Release;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -85,7 +85,7 @@
       <ConformanceMode>true</ConformanceMode>
     </ClCompile>
     <Link>
-      <AdditionalDependencies>glew32.lib;glfw3.lib;glm_static.lib;SOILd.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>glew32.lib;glfw3.lib;glm_static.lib;SOILd.lib;opengl32.lib;Box2D.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -108,7 +108,7 @@
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
-      <AdditionalDependencies>glew32.lib;glfw3.lib;glm_static.lib;SOIL.lib;opengl32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>glew32.lib;glfw3.lib;glm_static.lib;SOIL.lib;opengl32.lib;Box2D.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
