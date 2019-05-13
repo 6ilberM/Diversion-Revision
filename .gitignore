@@ -29,12 +29,17 @@
 *.exe
 *.out
 *.app
+*.ilk
+
+#Release
+*.iobj
 
 #OtherStuff
 *.suo
 *.pdb
 *.ipch
 *.opendb
+*.log
 
 # Visual Studio 2015 cache/options directory
 .vs/
