@@ -24,7 +24,6 @@
 *.la
 *.a
 
-
 # Executables
 *.exe
 *.out
@@ -33,6 +32,7 @@
 
 #Release
 *.iobj
+*.ipdb
 
 #OtherStuff
 *.suo
@@ -43,3 +43,6 @@
 
 # Visual Studio 2015 cache/options directory
 .vs/
+
+Dream Country/Dream Country/Debug/
+Dream Country/Dream Country/Release/
