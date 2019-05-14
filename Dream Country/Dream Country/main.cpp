@@ -21,8 +21,8 @@ GLFWwindow* Main_Window;
 //Shader
 //CShaderLoader* ShaderLoader;
 
-GLuint Default_Shader;
-GLuint	Light_Shader;
+//GLuint Default_Shader;
+//GLuint	Light_Shader;
 
 
 //Objs
@@ -30,11 +30,6 @@ GLuint	Light_Shader;
 //CCamera* Camara;
 //btDiscreteDynamicsWorld* m_world;
 //btRigidBody* test;
-
-bool Lightshaded = false;
-
-//DebugBug Enabler. //Make this fancier later... Might want to look into making a virtual console
-bool debugMode = false;
 
 
 void DestroyerofWorlds()
@@ -50,17 +45,6 @@ void KeyboardInput(GLFWwindow *_window, int _key, int _scancode, int _action, in
 	if (_key == GLFW_KEY_ESCAPE && _action == GLFW_PRESS)
 	{
 		glfwSetWindowShouldClose(_window, true);
-	}
-
-	if (_key == GLFW_KEY_0 && _action == GLFW_PRESS)
-	{
-		Lightshaded = !Lightshaded;
-	}
-
-
-	if (_key == GLFW_KEY_F1 && _action == GLFW_PRESS)
-	{
-		debugMode = !debugMode;
 	}
 
 }
@@ -119,19 +103,8 @@ void Render()
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 	glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
-	//if (false == Lightshaded)
-	//{
-	//	Cubo->Render(Light_Shader, *Camara);
-
-	//}
-	//else
-	//{
-	//	Cubo->Render(Default_Shader, *Camara);
-	//}
 
 }
-
-bool b_doOnce = false;
 
 //Logic For what is happening in scene
 void Update()
@@ -139,16 +112,6 @@ void Update()
 	fin_Time = cur_Time;
 	cur_Time = glfwGetTime();
 	d_Time = cur_Time - fin_Time;
-
-	if (debugMode)
-	{
-		if (b_doOnce == false)
-		{
-			//Camara->Observe(glm::vec3(0, 0, -2.0f));
-			b_doOnce = true;
-		}
-		//Cubo->update(d_Time);
-	}
 
 }
 
@@ -158,11 +121,12 @@ int main()
 	OnBeginPlay();
 	while (!glfwWindowShouldClose(Main_Window))
 	{
-		//Update();
-		//Render();
+		Update();
+		Render();
 		glfwSwapBuffers(Main_Window);
 		glfwPollEvents();
 	}
+
 	//you need this to avoid memory leaks 6 of them to be precise
 	DestroyerofWorlds();
 	return 0;
