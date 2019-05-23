@@ -6,7 +6,13 @@
 
 //Other
 #include<iostream>
-#include <vld.h>
+
+//Strange new Vld
+#define _CRTDBG_MAP_ALLOC
+#include <stdlib.h>
+#include <crtdbg.h>
+
+//#include <vld.h>
 
 using namespace std;
 
@@ -39,8 +45,9 @@ void DestroyerofWorlds()
 	//delete Cubo;
 	//delete Camara;
 }
+
 //In case of Exit
-void KeyboardInput(GLFWwindow *_window, int _key, int _scancode, int _action, int mods)
+void KeyboardInput(GLFWwindow* _window, int _key, int _scancode, int _action, int mods)
 {
 	if (_key == GLFW_KEY_ESCAPE && _action == GLFW_PRESS)
 	{
@@ -129,5 +136,7 @@ int main()
 
 	//you need this to avoid memory leaks 6 of them to be precise
 	DestroyerofWorlds();
+
+	_CrtDumpMemoryLeaks();
 	return 0;
 }
