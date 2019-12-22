@@ -17,7 +17,7 @@
 using namespace std;
 
 //DeltaTime: States the difference in time since previous and current frame
-double d_Time;
+double deltaTime;
 
 double cur_Time;
 double fin_Time;
@@ -61,7 +61,7 @@ void WindowResizeCall(GLFWwindow* _window, int _width, int _height)
 	glViewport(0, 0, _width, _height);
 }
 
-int init()
+int Init()
 {
 	if (!glfwInit())
 	{
@@ -92,16 +92,22 @@ int init()
 
 	glfwSetKeyCallback(Main_Window, KeyboardInput);
 	glfwSetFramebufferSizeCallback(Main_Window, WindowResizeCall);
-
+	return 0;
 }
 
 int OnBeginPlay()
 {
+	b2Vec2 gravity(0.0f, -10.0f);
+	b2World world(gravity);
 	//std::cout << "COMPILING SHADERS..." << std::endl;
 	//Default_Shader = shaderloader.loadShaders("Assets/Shaders/default.vs", "Assets/Shaders/default.fs");
 	//Light_Shader = shaderloader.loadShaders("Assets/Shaders/lit.vs", "Assets/Shaders/lit.fs");
 
 	// Construct a world object, which will hold and simulate the rigid bodies.
+	if (true)
+	{
+		return -1;
+	}
 	return 1;
 }
 
@@ -118,13 +124,13 @@ void Update()
 {
 	fin_Time = cur_Time;
 	cur_Time = glfwGetTime();
-	d_Time = cur_Time - fin_Time;
+	deltaTime = cur_Time - fin_Time;
 
 }
 
 int main()
 {
-	init();
+	Init();
 	OnBeginPlay();
 	while (!glfwWindowShouldClose(Main_Window))
 	{
